@@ -1,20 +1,20 @@
 {
-    "compilerOptions": {
-      "target": "ES5",
-      "module": "ESNext",
-      "lib": ["DOM", "ESNext"],
-      "declaration": true,
-      "declarationMap": true,
-      "outDir": "dist",
-      "jsx": "react-jsx",
-      "moduleResolution": "Node",
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "baseUrl": "src",
-      "types": ["@types/jest"], 
-    },
-    "include": ["src", "styled-system.d.ts", "jest.config.ts", "jest.setup.ts"],
-    "exclude": ["node_modules", "dist", "jest.config.ts"]
-  }
-  
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "outDir": "dist",
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src",
+    "types": ["@types/jest"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "jest.config.ts", "jest.setup.ts"]
+}

@@ -1,13 +1,32 @@
-import { ImgHTMLAttributes } from "react";
-
-interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+interface ImageProps {
   src: string;
   alt: string;
   link?: string;
+  width?: number | string;
+  height?: number | string;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-const Image = ({ src, alt, link, ...props }: ImageProps) => {
-  const image = <img src={src} alt={alt} {...props} />;
+const Image = ({
+  src,
+  alt,
+  link,
+  width,
+  height,
+  className,
+  style,
+}: ImageProps) => {
+  const image = (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      style={style}
+    />
+  );
 
   return link ? (
     <a href={link} target="_blank" rel="noopener noreferrer">

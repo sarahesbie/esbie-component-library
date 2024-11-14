@@ -1,0 +1,21 @@
+@import "../../../styles/variable.scss";
+
+.section {
+  width: 100%;
+  padding: $padding-medium;
+  box-sizing: border-box;
+
+  &--dark {
+    background-color: $dark-background;
+    color: $text-color-dark;
+  }
+
+  &--light {
+    background-color: $light-background;
+    color: $text-color-light;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $padding-small;
+  }
+}

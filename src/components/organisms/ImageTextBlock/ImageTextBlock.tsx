@@ -1,6 +1,6 @@
-// src/components/organisms/ImageTextBlock/ImageTextBlock.tsx
 import { ReactNode } from "react";
 import StyledImage from "../../molecules/StyledImage/StyledImage";
+import styles from "./ImageTextBlock.module.scss";
 
 interface ImageTextBlockProps {
   imageSrc: string;
@@ -14,11 +14,11 @@ const ImageTextBlock = ({
   children,
 }: ImageTextBlockProps) => {
   return (
-    <div style={{ display: "flex" }}>
-      <div style={{ flex: "1 1 33%" }}>
+    <div className={styles.container}>
+      <div className={styles["image-container"]}>
         <StyledImage src={imageSrc} alt={altText} />
       </div>
-      <div style={{ flex: "1 1 67%", paddingLeft: "1rem" }}>{children}</div>
+      <div className={styles["text-container"]}>{children}</div>
     </div>
   );
 };

@@ -13,8 +13,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "src",
-    "types": ["@types/jest"]
+    "importHelpers": true,
+    "types": ["@types/jest", "tslib"]
   },
-  "include": ["src", "theme/theme.ts"],
+  "include": ["src", "theme", "global.d.ts"],
   "exclude": ["node_modules", "dist", "jest.config.ts", "jest.setup.ts"]
 }

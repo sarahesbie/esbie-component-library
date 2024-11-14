@@ -24,7 +24,7 @@ import TwoColumnBlock from "./components/organisms/TwoColumnBlock/TwoColumnBlock
 import FullWidthSection from "./components/templates/FullWidthSection/FullWidthSection";
 
 // Importing Theme
-import { ThemeProvider, useTheme } from "../theme/ThemeContext";
+import { ThemeProvider, useTheme } from "./theme/ThemeContext";
 
 // Exporting Components
 export {
@@ -52,4 +52,8 @@ export {
 
   // Templates
   FullWidthSection,
+
+  //Theme
+  ThemeProvider,
+  useTheme,
 };

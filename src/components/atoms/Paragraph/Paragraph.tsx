@@ -1,23 +1,16 @@
 import { ReactNode } from "react";
-import { useTheme } from "../../../../theme/ThemeContext";
-import { lightTheme, darkTheme } from "../../../../theme/theme";
-import styled from "styled-components";
+import { useTheme } from "../../../theme/ThemeContext";
+import styles from "./Paragraph.module.scss";
 
 interface ParagraphProps {
   children?: ReactNode;
 }
 
-const StyledParagraph = styled.p<{ themeMode: "light" | "dark" }>`
-  background-color: ${(props) =>
-    props.themeMode === "dark" ? darkTheme.background : lightTheme.background};
-  color: ${(props) =>
-    props.themeMode === "dark" ? darkTheme.text : lightTheme.text};
-`;
-
 const Paragraph = ({ children }: ParagraphProps) => {
   const { theme } = useTheme();
+  const themeClass = theme === "dark" ? styles.dark : styles.light;
 
-  return <StyledParagraph themeMode={theme}>{children}</StyledParagraph>;
+  return <p className={`${styles.paragraph} ${themeClass}`}>{children}</p>;
 };
 
 export default Paragraph;

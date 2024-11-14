@@ -1,6 +1,6 @@
 {
   "name": "esbie-component-library",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "type": "module",
   "private": false,
   "description": "Welcome to the **Esbie Component Library**! This project is a reusable, customisable component library built with React, TypeScript, and styled-components. It follows atomic design principles and includes components organised into atoms, molecules, organisms, and templates. The library is bundled using Rollup and tested with Jest and React Testing Library. A sandbox app is also included for developing and testing components.",
@@ -29,10 +29,11 @@
     "jest": "^29.7.0",
     "lerna": "^8.1.9",
     "rollup": "^3.0.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
     "ts-jest": "^29.2.5",
-    "typescript": "^5.6.3",
-    "rollup-plugin-postcss": "^4.0.2"
+    "typescript": "^5.6.3"
   },
   "dependencies": {
     "styled-system": "^5.1.5",

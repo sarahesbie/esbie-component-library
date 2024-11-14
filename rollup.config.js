@@ -39,7 +39,10 @@ export default {
       minimize: true,
     }),
     copy({
-      targets: [{ src: "src/**/*.module.scss", dest: "dist" }],
+      targets: [
+        { src: "src/**/*.module.scss", dest: "dist" },
+        { src: "src/styles/variables.scss", dest: "dist/styles" },
+      ],
       flatten: false,
     }),
   ],

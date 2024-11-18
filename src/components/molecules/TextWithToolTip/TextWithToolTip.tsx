@@ -1,6 +1,6 @@
 import Text from "../../atoms/Text/Text";
 import Tooltip from "../../atoms/ToolTip/ToolTip";
-import styles from "./TextWithTooltip.module.scss";
+// import styles from "./TextWithTooltip.module.scss";
 
 interface TextWithTooltipProps {
   gradientIndex?: number;

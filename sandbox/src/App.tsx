@@ -4,96 +4,130 @@ import {
   CardGallery,
   FullWidthSection,
   Heading,
+  HeadingWithIcon,
+  Icon,
   IconGallery,
   ImageTextBlock,
   Paragraph,
-  ThemeToggle,
+  Spacer,
+  TextWithTooltip,
   TwoColumnBlock,
 } from "../../src";
 import { ThemeProvider } from "../../src/theme/ThemeContext";
+import { techIcons, linkIcons, cardData } from "./content";
 
-const App: React.FC = () => {
-  const cardContents = [
-    <p>Talent Community Platform</p>,
-    <p>Esbie Component Library</p>,
-    <p>School of Code</p>,
-    <p>Echobot Journal</p>,
-    <p>Capri Theatre</p>,
-    <p>Workshops & Speaking</p>,
-  ];
+const cardContents = [
+  "Talent Community Platform",
+  "Esbie Component Library",
+  "School of Code",
+  "Echobot Journal",
+  "Capri Theatre",
+  "Workshops & Speaking",
+];
 
-  const techIcons = [
-    {
-      icon: <img src="https://picsum.photos/id/237/80/?grayscale" />,
-      caption: "Caption 1",
-    },
-    {
-      icon: <img src="https://picsum.photos/id/237/80/?grayscale" />,
-      caption: "Caption 2",
-    },
-    {
-      icon: <img src="https://picsum.photos/id/237/80/?grayscale" />,
-      caption: "Caption 3",
-    },
-  ];
+const HeroSection = () => (
+  <FullWidthSection>
+    <ImageTextBlock
+      imageSrc="./images/sarah-brown-web-developer.png"
+      altText="hero image"
+    >
+      <Heading level={1}>
+        Hi, I'm Sarah!👋🏼 <br />
+        I'm a{" "}
+        <TextWithTooltip
+          text="cloud native,"
+          tooltipContent="I design applications specifically for the cloud, so they can scale efficiently, recover quickly, and adapt as needed."
+          gradientIndex={1}
+        />{" "}
+        <TextWithTooltip
+          text="full-stack"
+          tooltipContent="I handle both front-end and back-end development, managing everything from the user interface to the server"
+          gradientIndex={2}
+        />{" "}
+        <TextWithTooltip
+          text="web developer"
+          tooltipContent="I create and maintain websites and web applications"
+          gradientIndex={3}
+        />
+        .
+      </Heading>
+    </ImageTextBlock>
+  </FullWidthSection>
+);
 
-  const linkIcons = [
-    {
-      icon: <img src="https://picsum.photos/id/237/150/?grayscale" />,
-      caption: "Caption 1",
-    },
-    {
-      icon: <img src="https://picsum.photos/id/237/150/?grayscale" />,
-      caption: "Caption 1",
-    },
-  ];
-  return (
-    // <div>
-    //   <h1>Component Library Playground</h1>
-    //   <Button onClick={() => alert("Button clicked!")}>click me!</Button>
-    // </div>
-    <ThemeProvider>
-      <main>
-        <FullWidthSection>
-          <ThemeToggle />
-          {/* hero */}
-          <ImageTextBlock
-            imageSrc="https://picsum.photos/id/65/200/300"
-            altText="hero image"
-          >
-            <Heading level={2}>
-              Hi, I'm Sarah! I'm a cloud native, full-stack web developer.
-            </Heading>{" "}
-          </ImageTextBlock>
-        </FullWidthSection>
-        <FullWidthSection>
-          {/* work */}
-          <CardGallery cards={cardContents} galleryId="portfolio-cards" />
-        </FullWidthSection>
-        <FullWidthSection>
-          {/* tools */}
-          <IconGallery icons={techIcons} withCaptions={true} />
-        </FullWidthSection>
-        <FullWidthSection>
-          {/* about */}
-          <Heading level={3}>Something about me and my values</Heading>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Illud non
-            continuo, ut aeque incontentae. Oratio me istius philosophi non
-            offendit; Duo Reges: constructio interrete. Nihil opus est exemplis
-            hoc facere longius.
-          </Paragraph>
-        </FullWidthSection>
-        <FullWidthSection>
-          {/* more */}
-          <TwoColumnBlock
-            leftColumn={<Heading level={3}>More from me </Heading>}
-            rightColumn={<IconGallery icons={linkIcons} withCaptions={true} />}
-          />
-        </FullWidthSection>
-      </main>
-    </ThemeProvider>
-  );
-};
+const Section = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <FullWidthSection>
+    <Heading level={2}>{title}</Heading>
+    <Spacer size="medium" />
+
+    {children}
+  </FullWidthSection>
+);
+
+const App = () => (
+  <ThemeProvider>
+    <main>
+      <HeroSection />
+
+      <Section title="My Work">
+        <CardGallery
+          cards={cardData.map((card, index) => (
+            <div key={index}>
+              <h2>{card.title}</h2>
+              <p>{card.description}</p>
+            </div>
+          ))}
+          galleryId="projects"
+        />
+      </Section>
+
+      <FullWidthSection
+        backgroundImage="./images/dreamy-pastel-clouds.jpeg"
+        backgroundType="content"
+        alignment="center"
+        glassEffect={true}
+      >
+        {" "}
+        <Spacer size="large" />
+        <Heading level={2}>About Me</Heading>
+        <Spacer size="small" />
+        <Paragraph size="medium">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Illud non
+          continuo, ut aeque incontentae. Oratio me istius philosophi non
+          offendit; Duo Reges: constructio interrete. Nihil opus est exemplis
+          hoc facere longius.
+        </Paragraph>{" "}
+        <Spacer size="large" />
+      </FullWidthSection>
+
+      <Section title="The Tools I Use">
+        <IconGallery icons={techIcons} withCaptions={true} />
+      </Section>
+
+      <FullWidthSection>
+        <TwoColumnBlock
+          leftColumn={
+            <HeadingWithIcon
+              level={2}
+              icon={<i className="fa-solid fa-arrow-right"></i>}
+              iconPosition="right"
+            >
+              More from me
+            </HeadingWithIcon>
+          }
+          rightColumn={
+            <IconGallery icons={linkIcons} withCaptions={true} size="large" />
+          }
+        />
+      </FullWidthSection>
+    </main>
+  </ThemeProvider>
+);
 
 export default App;

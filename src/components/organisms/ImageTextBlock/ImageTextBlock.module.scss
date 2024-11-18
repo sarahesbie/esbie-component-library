@@ -1,0 +1,37 @@
+// variables.scss
+
+// Colors
+$dark-background: #333;
+$light-background: #fff;
+$text-color-dark: #fff;
+$text-color-light: #000;
+
+// Spacing
+$padding-small: 1rem;
+$padding-medium: 3rem;
+
+// Responsive Breakpoints
+$breakpoint-mobile: 600px;
+
+.container {
+  display: flex;
+  background-color: transparent;
+
+  .image-container {
+    flex: 1 1 33%;
+    margin-right: $padding-medium;
+  }
+
+  .text-container {
+    flex: 1 1 67%;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+
+    .image-container {
+      margin-right: 0;
+      margin-bottom: $padding-medium;
+    }
+  }
+}

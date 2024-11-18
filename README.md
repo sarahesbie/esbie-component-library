@@ -11,7 +11,6 @@ Welcome to the **Esbie Component Library**! This project is a reusable, customis
 - [Testing Components](#testing-components)
 - [Contributing](#contributing)
 
-
 ## Project Structure
 
 This repository uses a monorepo structure with `pnpm` workspaces. The main folders include:
@@ -29,6 +28,7 @@ The component library is organized following atomic design principles:
 - **Templates**: High-level layouts, such as `BasicLayout` or `DashboardLayout`.
 
 Each component folder typically contains:
+
 - `ComponentName.tsx`: The main component file.
 - `ComponentName.test.tsx`: Jest test file.
 - `index.ts`: Barrel file for easier imports.
@@ -41,9 +41,10 @@ Each component folder typically contains:
 
 - **Node.js**: Ensure Node.js is installed (v14+ recommended).
 - **pnpm**: Install `pnpm` globally if you haven't already:
-` npm install -g pnpm`
+  ` npm install -g pnpm`
 
 ## Installation
+
 1. Clone the repository:
 
 `git clone https://github.com/your-username/esbie-component-library.git`
@@ -57,14 +58,16 @@ Each component folder typically contains:
 `pnpm install`
 
 ## Running the Sandbox App
+
 To test components in a live environment, run the sandbox app:
+`cd sandbox`
 
 `pnpm run dev --filter sandbox`
 
 This will start the Vite dev server at http://localhost:2000 (or another port if configured). Open this address in your browser to preview the components in the sandbox environment.
 
-
 ## Scripts
+
 The following commands are available in the project:
 
 - `pnpm run build`: Builds the component library using Rollup.
@@ -72,14 +75,19 @@ The following commands are available in the project:
 - `pnpm run test`: Runs tests for all components using Jest.
 
 ## Testing Components
+
 Components are tested with Jest and React Testing Library. Test files are located alongside each component and follow the .test.tsx naming convention.
 
 To run tests:
 
 `pnpm run test`
 
+# Notes
+
+CSS Reset Recommendation: For consistent styling across browsers, I recommend applying a CSS reset or normalisation in your codebase. This component library does not include a global CSS reset, allowing you to choose the best approach for your project.
 
 # Contributing
+
 Contributions are welcome! If you’d like to contribute to this project, please follow these steps:
 
 1. Fork the repository.
@@ -91,4 +99,5 @@ Contributions are welcome! If you’d like to contribute to this project, please
 Please ensure your code follows the existing style, is well-tested, and includes documentation if necessary.
 
 ## License
+
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.

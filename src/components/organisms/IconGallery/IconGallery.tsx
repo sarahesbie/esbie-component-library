@@ -4,7 +4,7 @@ import IconWithCaption from "../../molecules/IconWithCaption/IconWithCaption";
 import styles from "./IconGallery.module.scss";
 
 interface IconGalleryProps {
-  icons: { icon: ReactNode; caption?: string }[];
+  icons: { icon: ReactNode; caption?: string; link?: string }[];
   withCaptions?: boolean;
   size?: "small" | "medium" | "large";
 }
@@ -20,12 +20,16 @@ const IconGallery = ({
         withCaptions ? (
           <IconWithCaption
             key={index}
-            icon={item.icon}
+            icon={
+              <Icon link={item.link} size={size}>
+                {item.icon}
+              </Icon>
+            }
             caption={item.caption || ""}
             size={size}
           />
         ) : (
-          <Icon key={index} size={size}>
+          <Icon key={index} link={item.link} size={size}>
             {item.icon}
           </Icon>
         )

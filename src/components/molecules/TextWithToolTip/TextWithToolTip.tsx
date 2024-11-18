@@ -17,7 +17,8 @@ const TextWithTooltip = ({
 
   return (
     <Tooltip content={tooltipContent}>
-      <span className={`${styles.textWithTooltip} ${styles[gradientClass]}`}>
+      {/* <span className={`${styles.textWithTooltip} ${styles[gradientClass]}`}> */}
+      <span>
         <Text>{text}</Text>
       </span>
     </Tooltip>

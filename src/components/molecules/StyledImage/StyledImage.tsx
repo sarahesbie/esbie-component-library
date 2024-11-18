@@ -1,4 +1,5 @@
 import Image from "../../atoms/Image/Image";
+import styles from "./StyledImage.module.scss";
 
 interface StyledImageProps {
   src: string;
@@ -7,21 +8,11 @@ interface StyledImageProps {
 }
 
 const StyledImage = ({ src, alt, borderStyle = "none" }: StyledImageProps) => {
-  const borderStyles = {
-    none: "none",
-    solid: "1px solid black",
-    dashed: "1px dashed black",
-    rounded: "1px solid black",
-  };
-
   return (
     <Image
       src={src}
       alt={alt}
-      style={{
-        border: borderStyles[borderStyle],
-        borderRadius: borderStyle === "rounded" ? "50%" : "0",
-      }}
+      className={`${styles.image} ${styles[borderStyle]}`}
     />
   );
 };

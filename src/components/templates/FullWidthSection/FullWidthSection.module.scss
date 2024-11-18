@@ -1,7 +1,7 @@
 // variables.scss
 
 // Colors
-$dark-background: #333;
+$dark-background: #0e0e0e;
 $light-background: #fff;
 $text-color-dark: #fff;
 $text-color-light: #000;
@@ -13,10 +13,15 @@ $padding-medium: 2rem;
 // Responsive Breakpoints
 $breakpoint-mobile: 600px;
 
-.section {
+.fullWidthSection {
   width: 100%;
-  padding: $padding-medium;
   box-sizing: border-box;
+  margin: 0;
+  padding: 5rem 0;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   &--dark {
     background-color: $dark-background;
@@ -28,7 +33,44 @@ $breakpoint-mobile: 600px;
     color: $text-color-light;
   }
 
+  // Alignment classes
+  &.alignLeft {
+    text-align: left;
+  }
+
+  &.alignCenter {
+    text-align: center;
+  }
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // Apply padding if there’s a background image
+    &[style*="background-image"] {
+      padding: $padding-medium;
+    }
+  }
+
+  // Optional glass effect class
+  &.glassEffect {
+    .content {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      border-radius: 10px; // Optional rounded corners
+      padding: $padding-medium; // Additional padding for readability
+    }
+  }
+
+  // Responsive adjustments
   @media (max-width: $breakpoint-mobile) {
     padding: $padding-small;
+
+    .content {
+      padding: $padding-small;
+    }
   }
 }

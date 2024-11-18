@@ -1,0 +1,28 @@
+.headingWithIcon {
+  display: inline-flex;
+  align-items: center;
+  //   justify-content: flex-start;
+
+  .icon {
+    margin: 0 0.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &.left {
+    flex-direction: row-reverse;
+  }
+
+  &.right {
+    flex-direction: row;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    display: inline;
+  }
+}

@@ -1,18 +1,33 @@
 import { ReactNode } from "react";
+import styles from "./Card.module.scss";
 
 interface CardProps {
   children: ReactNode;
   link?: string;
   id?: any;
+  backgroundImage?: string;
+  backgroundColor?: string;
 }
 
-const Card = ({ children, link, id }: CardProps) => {
-  const content = (
+const Card = ({
+  children,
+  link,
+  id,
+  backgroundImage,
+  backgroundColor,
+}: CardProps) => {
+  const cardContent = (
     <div
       id={id}
-      style={{ border: "1px solid #ccc", padding: "1rem", borderRadius: "4px" }}
+      className={styles.card}
+      style={{
+        backgroundImage: backgroundImage
+          ? `url(${backgroundImage})`
+          : undefined,
+        backgroundColor: backgroundColor || undefined,
+      }}
     >
-      {children}
+      <div className={styles.cardContent}>{children}</div>
     </div>
   );
 
@@ -21,12 +36,12 @@ const Card = ({ children, link, id }: CardProps) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      style={{ textDecoration: "none" }}
+      className={styles.cardLink}
     >
-      {content}
+      {cardContent}
     </a>
   ) : (
-    content
+    cardContent
   );
 };
 

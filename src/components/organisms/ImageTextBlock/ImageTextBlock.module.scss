@@ -8,7 +8,7 @@ $text-color-light: #000;
 
 // Spacing
 $padding-small: 1rem;
-$padding-medium: 2rem;
+$padding-medium: 3rem;
 
 // Responsive Breakpoints
 $breakpoint-mobile: 600px;
@@ -19,7 +19,7 @@ $breakpoint-mobile: 600px;
 
   .image-container {
     flex: 1 1 33%;
-    margin-right: $padding-small;
+    margin-right: $padding-medium;
   }
 
   .text-container {
@@ -31,7 +31,7 @@ $breakpoint-mobile: 600px;
 
     .image-container {
       margin-right: 0;
-      margin-bottom: $padding-small;
+      margin-bottom: $padding-medium;
     }
   }
 }

@@ -1,0 +1,32 @@
+.text {
+  //   font-size: inherit;
+  //   font-weight: inherit;
+  //   color: inherit;
+  &.gradient {
+    background: linear-gradient(45deg, #a8e6cf, #ff8b94, #ffd3b6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.gradient1 {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient2 {
+  background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient3 {
+  background: linear-gradient(45deg, #84fab0, #8fd3f4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

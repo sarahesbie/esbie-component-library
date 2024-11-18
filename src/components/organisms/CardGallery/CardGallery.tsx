@@ -1,19 +1,14 @@
 import Card from "../../atoms/Card/Card";
+import styles from "./CardGallery.module.scss";
 
 interface CardGalleryProps {
   cards: React.ReactNode[];
-  galleryId?: any;
+  galleryId?: string;
 }
 
 const CardGallery = ({ cards, galleryId }: CardGalleryProps) => {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-        gap: "1rem",
-      }}
-    >
+    <div className={styles.cardGallery}>
       {cards.map((card, index) => (
         <Card key={`${galleryId}-${index}`} id={`${galleryId}-card-${index}`}>
           {card}

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import styles from "./Tooltip.module.scss";
 
 interface TooltipProps {
   content: ReactNode;
@@ -7,7 +8,7 @@ interface TooltipProps {
 
 const Tooltip = ({ content, children }: TooltipProps) => {
   return (
-    <span className="tooltip" data-tooltip={content}>
+    <span className={styles.tooltip} data-tooltip={content}>
       {children}
     </span>
   );

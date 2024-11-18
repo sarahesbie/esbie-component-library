@@ -7,12 +7,15 @@ import Heading from "./components/atoms/Heading/Heading";
 import Text from "./components/atoms/Text/Text";
 import Paragraph from "./components/atoms/Paragraph/Paragraph";
 import Toggle from "./components/atoms/Toggle/Toggle";
+import Spacer from "./components/atoms/Spacer/Spacer";
 
 // Importing Molecules
 import StyledImage from "./components/molecules/StyledImage/StyledImage";
 import InteractiveHeading from "./components/molecules/InteractiveHeading/InteractiveHeading";
 import IconWithCaption from "./components/molecules/IconWithCaption/IconWithCaption";
 import ThemeToggle from "./components/molecules/ThemeToggle/ThemeToggle";
+import HeadingWithIcon from "./components/molecules/HeadingWithIcon/HeadingWithIcon";
+import TextWithTooltip from "./components/molecules/TextWithToolTip/TextWithToolTip";
 
 // Importing Organisms
 import IconGallery from "./components/organisms/IconGallery/IconGallery";
@@ -37,12 +40,15 @@ export {
   Text,
   Paragraph,
   Toggle,
+  Spacer,
 
   // Molecules
   StyledImage,
   InteractiveHeading,
   IconWithCaption,
   ThemeToggle,
+  HeadingWithIcon,
+  TextWithTooltip,
 
   // Organisms
   IconGallery,

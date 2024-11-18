@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import styles from "./TwoColumnBlock.module.scss";
 
 interface TwoColumnBlockProps {
   leftColumn: ReactNode;
@@ -7,9 +8,9 @@ interface TwoColumnBlockProps {
 
 const TwoColumnBlock = ({ leftColumn, rightColumn }: TwoColumnBlockProps) => {
   return (
-    <div style={{ display: "flex" }}>
-      <div style={{ flex: "1 1 50%" }}>{leftColumn}</div>
-      <div style={{ flex: "1 1 50%", paddingLeft: "1rem" }}>{rightColumn}</div>
+    <div className={styles.container}>
+      <div className={styles.leftColumn}>{leftColumn}</div>
+      <div className={styles.rightColumn}>{rightColumn}</div>
     </div>
   );
 };

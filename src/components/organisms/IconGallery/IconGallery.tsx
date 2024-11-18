@@ -1,30 +1,33 @@
 import { ReactNode } from "react";
 import Icon from "../../atoms/Icon/Icon";
 import IconWithCaption from "../../molecules/IconWithCaption/IconWithCaption";
+import styles from "./IconGallery.module.scss";
 
 interface IconGalleryProps {
   icons: { icon: ReactNode; caption?: string }[];
   withCaptions?: boolean;
+  size?: "small" | "medium" | "large";
 }
 
-const IconGallery = ({ icons, withCaptions = false }: IconGalleryProps) => {
+const IconGallery = ({
+  icons,
+  withCaptions = false,
+  size = "medium",
+}: IconGalleryProps) => {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(50px, 1fr))",
-        gap: "1rem",
-      }}
-    >
+    <div className={styles.iconGallery}>
       {icons.map((item, index) =>
         withCaptions ? (
           <IconWithCaption
             key={index}
             icon={item.icon}
             caption={item.caption || ""}
+            size={size}
           />
         ) : (
-          <Icon key={index}>{item.icon}</Icon>
+          <Icon key={index} size={size}>
+            {item.icon}
+          </Icon>
         )
       )}
     </div>

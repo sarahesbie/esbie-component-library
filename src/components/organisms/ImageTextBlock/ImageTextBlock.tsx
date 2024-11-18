@@ -16,7 +16,7 @@ const ImageTextBlock = ({
   return (
     <div className={styles.container}>
       <div className={styles["image-container"]}>
-        <StyledImage src={imageSrc} alt={altText} />
+        <StyledImage src={imageSrc} alt={altText} borderStyle="none" />
       </div>
       <div className={styles["text-container"]}>{children}</div>
     </div>

@@ -16,15 +16,6 @@ import {
 import { ThemeProvider } from "../../src/theme/ThemeContext";
 import { techIcons, linkIcons, cardData } from "./content";
 
-const cardContents = [
-  "Talent Community Platform",
-  "Esbie Component Library",
-  "School of Code",
-  "Echobot Journal",
-  "Capri Theatre",
-  "Workshops & Speaking",
-];
-
 const HeroSection = () => (
   <FullWidthSection>
     <ImageTextBlock
@@ -75,7 +66,7 @@ const App = () => (
     <main>
       <HeroSection />
 
-      <Section title="My Work">
+      {/* <Section title="My Work">
         <CardGallery
           cards={cardData.map((card, index) => (
             <div key={index}>
@@ -85,7 +76,7 @@ const App = () => (
           ))}
           galleryId="projects"
         />
-      </Section>
+      </Section> */}
 
       <FullWidthSection
         backgroundImage="./images/dreamy-pastel-clouds.jpeg"

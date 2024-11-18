@@ -32,11 +32,9 @@ export default {
     resolve(),
     commonjs(),
     postcss({
+      extensions: [".css", ".scss"],
+      extract: true,
       modules: true,
-      use: {
-        sass: true,
-      },
-      minimize: true,
     }),
     copy({
       targets: [

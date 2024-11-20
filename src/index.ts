@@ -25,6 +25,7 @@ import TwoColumnBlock from "./components/organisms/TwoColumnBlock/TwoColumnBlock
 
 // Importing Templates
 import FullWidthSection from "./components/templates/FullWidthSection/FullWidthSection";
+import ReverseSplitSection from "./components/templates/ReverseSplitSection/ReverseSplitSection";
 
 // Importing Theme
 import { ThemeProvider, useTheme } from "./theme/ThemeContext";
@@ -58,6 +59,7 @@ export {
 
   // Templates
   FullWidthSection,
+  ReverseSplitSection,
 
   //Theme
   ThemeProvider,

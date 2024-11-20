@@ -1,29 +1,21 @@
+import styles from "./Image.module.scss";
 interface ImageProps {
   src: string;
   alt: string;
   link?: string;
   width?: number | string;
   height?: number | string;
-  className?: string;
   style?: React.CSSProperties;
 }
 
-const Image = ({
-  src,
-  alt,
-  link,
-  width,
-  height,
-  className,
-  style,
-}: ImageProps) => {
+const Image = ({ src, alt, link, width, height, style }: ImageProps) => {
   const image = (
     <img
       src={src}
       alt={alt}
       width={width}
       height={height}
-      className={className}
+      className={styles.image}
       style={style}
     />
   );

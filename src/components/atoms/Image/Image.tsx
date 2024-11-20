@@ -6,16 +6,25 @@ interface ImageProps {
   width?: number | string;
   height?: number | string;
   style?: React.CSSProperties;
+  className?: string;
 }
 
-const Image = ({ src, alt, link, width, height, style }: ImageProps) => {
+const Image = ({
+  src,
+  alt,
+  link,
+  width,
+  height,
+  className,
+  style,
+}: ImageProps) => {
   const image = (
     <img
       src={src}
       alt={alt}
       width={width}
       height={height}
-      className={styles.image}
+      className={`${styles.image} ${className}`}
       style={style}
     />
   );

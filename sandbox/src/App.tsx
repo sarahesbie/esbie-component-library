@@ -12,6 +12,7 @@ import {
   Paragraph,
   ReverseSplitSection,
   Spacer,
+  SplitSection,
   TextWithTooltip,
   TwoColumnBlock,
 } from "../../src";
@@ -127,7 +128,7 @@ const App = () => (
       <Spacer size="large" />
       <Paragraph>Here is more text after the spacer.</Paragraph>
     </FullWidthSection>
-    <ReverseSplitSection
+    <SplitSection
       leftContent={
         <Heading level={2}>
           <Image alt="asdfa" src="./images/dreamy-pastel-clouds.jpeg" />{" "}

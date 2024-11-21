@@ -2,7 +2,7 @@ $padding-small: 1rem;
 $padding-medium: 2rem;
 $breakpoint-mobile: 800px;
 
-.reverseSplitSection {
+.splitSection {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +34,7 @@ $breakpoint-mobile: 800px;
     // }
 
     .leftColumn {
-      flex-basis: 40%;
+      flex-basis: 55%;
 
       // flex: 2 1 66%;
       // padding: $padding-medium;
@@ -48,7 +48,7 @@ $breakpoint-mobile: 800px;
     }
 
     .rightColumn {
-      flex-basis: 50%;
+      flex-basis: 35%;
       padding: $padding-medium;
 
       @media (max-width: $breakpoint-mobile) {

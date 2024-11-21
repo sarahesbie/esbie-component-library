@@ -1,17 +1,14 @@
 import { ReactNode } from "react";
-import styles from "./ReverseSplitSection.module.scss";
+import styles from "./SplitSection.module.scss";
 
-interface ReverseSplitSectionProps {
+interface SplitSection {
   leftContent: ReactNode;
   rightContent: ReactNode;
 }
 
-const ReverseSplitSection = ({
-  leftContent,
-  rightContent,
-}: ReverseSplitSectionProps) => {
+const SplitSection = ({ leftContent, rightContent }: SplitSection) => {
   return (
-    <section className={styles.reverseSplitSection}>
+    <section className={styles.splitSection}>
       <div className={styles.container}>
         <div className={styles.leftColumn}>{leftContent}</div>
         <div className={styles.rightColumn}>{rightContent}</div>
@@ -20,4 +17,4 @@ const ReverseSplitSection = ({
   );
 };
 
-export default ReverseSplitSection;
+export default SplitSection;
